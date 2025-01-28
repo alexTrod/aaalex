@@ -9,5 +9,15 @@ const posts = defineCollection({
     image: z.string().default("/blog-placeholder.svg"),
   }),
 });
+const computation = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    image: z.string().default("/blog-placeholder.svg"),
+  }),
+});
 
-export const collections = { posts };
+
+export const collections = { posts, computation };
